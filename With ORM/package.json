@@ -1,0 +1,22 @@
+{
+  "name": "with-orm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx prisma generate && npx tsx ./src/index.ts",
+    "studio": "npx prisma studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "prisma": "^7.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2"
+  }
+}
