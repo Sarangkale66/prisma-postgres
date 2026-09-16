@@ -4,7 +4,11 @@
   "description": "��#\u0000 \u0000p\u0000r\u0000i\u0000s\u0000m\u0000a\u0000-\u0000p\u0000o\u0000s\u0000t\u0000g\u0000r\u0000e\u0000s\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsx --watch ./src/server.ts"
+    "dev": "npx tsx --watch ./src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "generate:openapi": "tsx scripts/generate-openapi.ts",
+    "generate:client": "npm run generate:openapi && openapi --input generated/openapi.json --output client/src/api --client axios"
   },
   "repository": {
     "type": "git",
@@ -21,10 +25,17 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
-    "prisma": "^7.10.0"
+    "prisma": "^7.10.0",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "openapi-typescript-codegen": "^0.31.0"
   }
 }
